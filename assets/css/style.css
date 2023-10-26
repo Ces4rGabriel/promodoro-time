@@ -290,3 +290,127 @@ div {
 }
 
 
+@media screen  and (max-width: 768px) {
+    section.container {
+        flex-direction: column;
+        width: 90%;
+        height: 90%;
+    }
+
+    .container-timer {
+        order: 1;
+        width: 100%;
+        height: 50%;
+        margin-top: 20px;
+    }
+
+    .tasks {
+        order: 0;
+        width: 100%;
+        height: 50%;
+        margin-top: 20px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .tasks-list {
+        width: 90%;
+        position: absolute;
+        top: -13px;
+        height: 50%;
+        margin-top: 10px;
+        /*add scrool lateral*/
+        overflow-y: scroll;
+    }
+
+    .tasks h1 {
+        font-size: 30px;
+        top: 0px;
+        display: none;
+    }
+
+    .tasks-list > ol {
+        width: 100%;
+        height: 100%;
+    }
+
+    .button-group {
+        width: 100%;
+        position: absolute;
+        top: 20px;
+    }
+
+    .button-group button {
+        width: 100%;
+        height: 40px;
+    }
+
+    #start {
+        width: 50%;
+        bottom: 10px;
+    }
+
+    /*parte do formulário*/
+    form {
+        position: absolute;
+        top: 100px;
+        width: 80%;
+    }
+
+    #new-task {
+        width: 90%;
+    }
+
+
+    #counter {
+        font-size: 60px;
+        position: absolute;
+        top: -50px;
+    }
+
+    /*checkbox for tarefas*/
+    .task-actions > input {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        left:0px;
+        cursor:pointer;
+        z-index: 9999;
+    }
+    
+    .task-actions > input::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-radius: 50%;
+        left:-3px;
+        top: -1px;
+        background-color: white;
+        border: 1px solid var(--input-border);
+        z-index: 99;
+    }
+    
+    .task-actions > input:checked::before { 
+        content: '\2713';
+        font-size: 12px;
+        font-weight: bolder;
+    
+        color: green;
+        position: absolute;
+        left: 1px;
+        top:-1px;
+        z-index: 9999;
+    }
+
+    .task-actions > li {
+        position: absolute;
+        left: 30px;
+        list-style: none;
+    }
+}
+
+
