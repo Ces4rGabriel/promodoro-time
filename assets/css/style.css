@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
+
+:root {
+    --font-primary: 'Roboto Flex', sans-serif;
+    --button-text: #2A4054;
+    --button-disable-text: rgb(42 64 84 / 0.50);
+    --button-disable-bk: rgb(132 167 197 / 0.50);
+    --input-border:#84A7C5;
+    --button-bk: #84A7C5;
+    --placeholder-color: #999999;
+    --card-bk: rgb(212 212 212 / 0.80);
+    --divider-color: #B0B0B0;
+    --color-text: #F9FAFB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: var(--font-primary);
+    font-weight: normal;
+    width: 100vw;
+    height: 100vh;
+    color: #343434;
+}
+
+.image-effect {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(153 171 187 / .6);
+}
+
+section.container{
+    background : var(--card-bk);
+    border-radius: 10px;
+    margin: 20px;
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    font-weight: bold;
+    color: var(--button-text);
+    background-color: var(--button-bk);
+    outline: none;
+    border: none;  
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*input tasks*/
+
+input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 90%;
+    margin: auto;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+input::placeholder {
+    color: var(--placeholder-color);
+    font-size: 16px;
+}
+
+/*button tasks*/
+#add-task {
+    background-color: var(--button-bk);
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#add-task > span {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--button-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    border-bottom: 3px solid var(--input-border);
+    margin-top: 30px;
+}
+
+.divider {
+    background-color: var(--divider-color);
+    height: 100%;
+    width: 1.5px;
+    margin: auto;
+}
+
+.container-timer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;  
+    width: 49%;
+    position: relative;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 49%;
+    position: relative;
+}
+
+.tasks h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--button-text);
+    margin-bottom: 10px;
+    text-align: center;
+    color: #343434;
+    margin-top: 15px;
+}
+
+/*configurando o grupo de botão*/
+.button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 80px;
+
+}
+
+.button-group button {
+    margin: 5px;
+   border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold; 
+    color: var(--button-disable-text);
+    background-color: var(--button-disable-bk);
+    outline: none;
+    border: none;
+    margin: 8px;
+}
+
+.button-group .modality {
+    box-sizing: content-box !important;
+    padding:0 14px !important;
+    width: 120px;
+    height: 40px;
+}
+
+
+.active-button {
+    background-color: var(--button-bk) !important;
+    color: var(--button-text) !important;
+}
+
+
+div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*time*/
+#counter {
+    font-size: 100px;
+    font-weight: bold;
+    color: var(--button-text);
+    margin-bottom: 10px;
+    text-align: center;
+    color: #343434;
+}
+
+/*botão começar*/
+#start {
+    background-color: var(--button-bk);
+    height: 55px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+    position: absolute;
+    bottom: 120px;
+}
+
+.tasks-list {
+    background-color: #DBDBDB;
+    width: 85%;
+    height: 69%;
+    position: absolute;
+    border-radius: 5px;
+    bottom: 20px;
+    padding: 20px;
+}
+
+.tasks-list > ol {
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+}
+
+/*lisat de tarefas*/
+.task-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 10px;
+}
+
+.task-actions > li {
+    position: absolute;
+    left: 30px;
+    list-style: none;
+}
+
+.task-actions > input {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left:0px;
+    cursor:pointer;
+    z-index: 9999;
+}
+
+.task-actions > input::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 50%;
+    left:-3px;
+    top: -1px;
+    background-color: white;
+    border: 1px solid var(--input-border);
+    z-index: 99;
+}
+
+.task-actions > input:checked::before { 
+    content: '\2713';
+    font-size: 12px;
+    font-weight: bolder;
+
+    color: green;
+    position: absolute;
+    left: 1px;
+    top:-1px;
+    z-index: 9999;
+}
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/tasks.js" defer></script>
+    <script src="assets/js/counter.js" defer></script>
+    <script src="https://kit.fontawesome.com/f93398103c.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="image-effect">
+      <section class="container">
+        <section class="container-timer">
+          <div class="button-group">
+            <button class="modality active-button" type="button" onclick="togleTime()">Pomodoro</button>
+            <button class="modality" type="button" onclick="togleTime()">Intervalo Curto</button>
+            <button class="modality" type="button" onclick="togleTime()">Intervalo Longo</button>
+          </div>
+          <div>
+            <p id="counter">25:00</p>
+          </div>
+          <div>
+            <button id="start" class="start" type="button" onclick="clock()">Começar</button>
+          </div>
+        </section>
+        <div class="divider"></div>
+        <section class="tasks">
+          <div>
+            <h1>Tarefas</h1>
+            <form>
+              <input
+                id="new-task"
+                type="text"
+                name="Nova Tarefa"
+                placeholder="Adicione uma nova tarefa"
+              />
+              <button id="add-task" type="button" onclick="addtasks()" onkeypress="addtasks()"><span>+</span></button>
+            </form>
+          </div>
+          <div class="tasks-list">
+            <ol id="tasks"></ol>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>
